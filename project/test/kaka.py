@@ -7,7 +7,7 @@ url = "https://kapi.kakao.com/v2/api/talk/memo/default/send"
 headers = {"Authorization": "Bearer " + "zewAa3Gk1NSBklDd_QZ1TZ8_1a_f1xwhNrWwEQo9dVoAAAF5x9vuWw"}
 
 text = """
-스마트벨 알람
+👉스마트벨 알람
 --------------------------------
 테스트입니다.
 https://drive.google.com/file/d/1_cuskySCMBeiFZvp_BKpy5pagES6ogfp/view

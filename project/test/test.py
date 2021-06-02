@@ -1,24 +1,20 @@
 import requests
-import urllib
-import json
+url = "https://kauth.kakao.com/oauth/token"
+rest_api_key = "ae26094c86e9e55680461930e4d16e13"
+redirect_uri = "https://example.com/oauth"  # APP에서 등록한 redirect_url
+authorize_code = "VmG2ZrIvgnFIYTrNIvJjayz-1wfy2gg1ei2jFh0xyvMHXZxFM0XBYTQ4s8cmpqDyWwzrfAopyNoAAAF5y4BrJQ"
+data = {
+    "grant_type": "authorization_code",
+    "client_id": rest_api_key,
+    "redirect_uri": redirect_uri,
+    "response_type": "code",
+}
 
-
-def getAccessToken(refreshToken):
-    url = "https://kauth.kakao.com/oauth/token"
-    payload = (
-        "grant_type=refresh_token&client_id=************************************&refresh_token="
-        + refreshToken
-    )
-    headers = {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Cache-Control": "no-cache",
-    }
-    reponse = requests.request("POST", url, data=payload, headers=headers)
-    access_token = json.loads(((reponse.text).encode("utf-8")))
-    return access_token
-
-
-result = getAccessToken(
-    "**************************************************"
-)  # 메세지 받을 사람의 REFRESH TOKEN 이용
-print(result)
+response = requests.post(url, data=data)
+print(response)
+authorize_code = response.json()
+print(authorize_code)
+print(authorize_code["code"])
+# tokens = response.json()
+# print(tokens)
+# print(tokens["access_token"])

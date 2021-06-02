@@ -1,8 +1,8 @@
+import requests
 url = "https://kauth.kakao.com/oauth/token"
 rest_api_key = "ae26094c86e9e55680461930e4d16e13"
-redirect_uri = "http://localhost:5000/oauth"  # APP에서 등록한 redirect_url
-authorize_code = "위 방법으로 얻은 code 값"
-
+redirect_uri = "https://example.com/oauth"  # APP에서 등록한 redirect_url
+authorize_code = "VmG2ZrIvgnFIYTrNIvJjayz-1wfy2gg1ei2jFh0xyvMHXZxFM0XBYTQ4s8cmpqDyWwzrfAopyNoAAAF5y4BrJQ"
 data = {
     "grant_type": "authorization_code",
     "client_id": rest_api_key,
@@ -12,8 +12,5 @@ data = {
 
 response = requests.post(url, data=data)
 tokens = response.json()
+print(tokens)
 print(tokens["access_token"])
-
-http://kauth.kakao.com/oauth/authorize?client_id=ae26094c86e9e55680461930e4d16e13&redirect_uri=https://example.com/oauth&response_type=code
-http://kauth.kakao.com/oauth/authorize?client_id={"ae26094c86e9e55680461930e4d16e13"}&redirect_uri={"https://example.com/oauth"}&response_type=code
-/oauth/authorize?client_id=ae26094c86e9e55680461930e4d16e13&redirect_uri=https://example.com/oauth&response_type=code

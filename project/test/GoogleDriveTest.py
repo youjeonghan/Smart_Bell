@@ -10,7 +10,7 @@ from googleapiclient.http import MediaFileUpload
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 
 
-def main():
+def file_upload():
     """Shows basic usage of the Drive v3 API.
     Prints the names and ids of the first 10 files the user has access to.
     """
@@ -28,7 +28,7 @@ def main():
         else:
             flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
             creds = flow.run_local_server(port=0)
-        # Save the credentials for the next run
+        # credentials 저장
         with open("token.pickle", "wb") as token:
             pickle.dump(creds, token)
 
@@ -52,26 +52,15 @@ def main():
         for item in items:
             print(u"{0} ({1})".format(item["name"], item["id"]))
 
-    #     # 단순 파일 업로드
-    # file_metadata = {'name' : name}
-    # ## mimeType을 설정해주어야 하지만, 웬만한 파일들은 자동으로 생성해준다.
-    # media = MediaFileUpload('/path', resumable = True)
-    # file = service.files().create(body = file_metadata, media_body=media, fields='id').execute()
 
-    # 특정 폴더 내 파일 업로드
-    ## parents에 업로드할 파일의 상위 폴더의 ID를 넣어주면 해당 폴더 안으로 업로드 된다.
-    name = "cat2"
-    # file_metadata = {"name": name, "parents": ["1Q9Hiy3cp2ewOZrJsq5E7RB_odPOPEEdx"]}
-    # media = MediaFileUpload("C:/Dev/Github/Smart_Bell/project/test/cat2.jpg", resumable=True)
-    # file = service.files().create(body=file_metadata, media_body=media, fields="id").execute()
-    print(1)
-
-    # test 용
-    file_metadata = {"name": "photo.jpg", "parents": ["1aAdyOkkIrwiGr-Bqy_MOS5xbNHwjCvaR"]}
-    media = MediaFileUpload("C:/Dev/Github/Smart_Bell/project/test/cat2.jpg", mimetype="image/jpeg")
+    # 이미지 저장 (.jpg)
+    file_metadata = {"name": "photo.jpg", "parents": ["1aAdyOkkIrwiGr-Bqy_MOS5xbNHwjCvaR"]} # 저장명, 저장폴더id
+    media = MediaFileUpload("C:/Dev/Github/Smart_Bell/project/test/cat2.jpg", mimetype="image/jpeg")    # 업로드할 파일 경로 및 타입
     file = service.files().create(body=file_metadata, media_body=media, fields="id").execute()
     print(file)
 
+    # 녹음 저장 (.wav)
+
 
 if __name__ == "__main__":
-    main()
+    file_upload()
