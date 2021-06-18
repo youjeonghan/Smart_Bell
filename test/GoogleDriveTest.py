@@ -56,15 +56,15 @@ def file_upload(type):
 
     if type=="image":
         # 이미지 저장 (.jpg)
-        file_metadata = {"name": "test.jpg", "parents": ["1aAdyOkkIrwiGr-Bqy_MOS5xbNHwjCvaR"]} # 저장명, 저장폴더id
+        file_metadata = {"name": "test.jpg", "parents": ["15C_6mNCIAXlmKnBPMDuz4UynLLxVXIxC"]} # 저장명, 저장폴더id
         media = MediaFileUpload("C:/Dev/Github/Smart_Bell/project/test/test.jpg", mimetype="image/jpeg")    # 업로드할 파일 경로 및 타입
         
     elif type=="wav":
         # 녹음 저장 (.wav)
-        file_metadata = {"name": "test.wav", "parents": ["1aAdyOkkIrwiGr-Bqy_MOS5xbNHwjCvaR"]}
-        media = MediaFileUpload("C:/Dev/Github/Smart_Bell/project/test/test.wav", mimetype="media/wav")
-    file = service.files().create(body=file_metadata, media_body=media, fields="id").execute()
-
+        file_metadata = {"name": "test.wav", "parents": ["1uRvhgCvOPUjEpNVedCJW8zXbBPReSKjO"]}
+        media = MediaFileUpload("C:/Dev/Github/Smart_Bell/project/test/test.wav", mimetype="audio/wav")
+    file = service.files().create(body=file_metadata, media_body=media, fields="id").execute()  # gdrive에 파일 저장
+    return file["id"]
 
 if __name__ == "__main__":
-    file_upload()
+    file_upload("image")
