@@ -1,4 +1,5 @@
 # Smart Bell
+![smartbell_thumbnail](https://user-images.githubusercontent.com/57481424/122572734-fc2efe80-d088-11eb-9c3c-9e6966610ae8.png)
 
 코로나 시대로 인한 비대면 행위의 증가에 맞춰 임베디드 시스템을 만들어 보고 싶어 시작한 프로젝트이다.
 
