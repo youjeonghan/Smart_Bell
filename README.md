@@ -8,7 +8,8 @@
 
 ## 실행 과정
 
-![image-20210618185503297](C:\Users\Jeongran\AppData\Roaming\Typora\typora-user-images\image-20210618185503297.png)
+![image-20210618185503297](https://user-images.githubusercontent.com/57481424/122571464-b887c500-d087-11eb-90b9-2fed70c3283b.png)
+
 
 방문자가 벨을 호출하면 안내 음성이 나오며 메시지를 녹음한다. 그후 방문자를 촬영하고 구글 드라이브API와 카카오API를 통해 사용자에게 알림을 카카오톡으로 발신한다.
 
@@ -16,7 +17,8 @@
 
 ## 알림 결과
 
-![image-20210618185551900](C:\Users\Jeongran\AppData\Roaming\Typora\typora-user-images\image-20210618185551900.png)
+![image-20210618185551900](https://user-images.githubusercontent.com/57481424/122571498-c0e00000-d087-11eb-8a68-7c7218ea38b3.png)
+
 
 실제 카톡이 오면 보게 되는 결과입니다.
 
@@ -24,6 +26,6 @@
 
 ## 개발 환경
 
-![KakaoTalk_20210618_121603888_02](E:\Jeonghan\학교 강의\임베디드시스템\개발 과정 사진\KakaoTalk_20210618_121603888_02.jpg)
+![KakaoTalk_20210618_121603888_02](https://user-images.githubusercontent.com/57481424/122571624-e2d98280-d087-11eb-939c-4066ecc5a30a.jpg)
+![KakaoTalk_20210618_121603888_03](https://user-images.githubusercontent.com/57481424/122571638-e53bdc80-d087-11eb-94d6-0d62374c9f29.jpg)
 
-![KakaoTalk_20210618_121603888_03](E:\Jeonghan\학교 강의\임베디드시스템\개발 과정 사진\KakaoTalk_20210618_121603888_03.jpg)
